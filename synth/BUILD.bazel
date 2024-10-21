@@ -1,0 +1,22 @@
+load("@rules_rust//rust:defs.bzl", "rust_doc", "rust_library", "rust_test")
+
+rust_library(
+    name = "synth",
+    srcs = [
+        "lib.rs",
+        "synth.rs",
+        "types.rs",
+    ],
+    crate_name = "synth",
+    visibility = ["//visibility:public"],
+)
+
+rust_test(
+    name = "synth_test",
+    crate = ":synth",
+)
+
+rust_doc(
+    name = "synth_doc",
+    crate = ":synth",
+)

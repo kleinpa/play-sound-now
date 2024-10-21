@@ -1,0 +1,15 @@
+name: test
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - "renovate/*"
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Tests
+        run: bazelisk test -c opt //...
