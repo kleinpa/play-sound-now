@@ -1,3 +1,5 @@
+module(name = "play-sound-now")
+
 bazel_dep(name = "rules_rust", version = "0.54.1")
 bazel_dep(name = "aspect_rules_js", version = "2.3.5")
 bazel_dep(name = "aspect_bazel_lib", version = "2.14.0")
